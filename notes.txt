@@ -1,0 +1,23 @@
+Bot Invite URL
+
+https://discord.com/api/oauth2/authorize?client_id=1083150073623478363&permissions=534727096384&scope=bot
+
+token
+
+MTA4MzE1MDA3MzYyMzQ3ODM2Mw.GkpFhP.g2RxsKPSFK2Zsx-iailEJfOMAhk_FH2Rz3z0Qo
+
+mongodb pass
+
+
+mongodb+srv://sjandrs1:zUDk2rG61VciEFwN@sjandrs1.nhtmw.mongodb.net/test
+
+zUDk2rG61VciEFwN
+
+
+
+client = pymongo.MongoClient("mongodb+srv://sjandrs1:zUDk2rG61VciEFwN@sjandrs1.nhtmw.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'))
+db = client.test
+
+
+
+Blue Lightning Ship!
