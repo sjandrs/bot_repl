@@ -1,0 +1,41 @@
+In Python, using Nextcord, generate code to create a cog in my 
+discord bot. When a discord user types the command $register-toon, the bot will show a form 
+in chat that captures a user's Character Name, Resonance, Health, Damage, Paragon Level, Class, and Clan Name.
+This data should then be saved to a SQLlite database table named diablo_toons.
+
+Next, when a user types the command $toon-list, the bot will show a list of all registered toons.
+
+Next, when a user types the command $toon-delete, the bot will show a list of all registered toons.
+The user will then select a toon to delete.
+
+Next, when a user types the command $toon-update, the bot will show a list of all registered toons.
+The user will then select a toon to update.
+
+Next, when a user types the command $toon-search, the bot will show a list of all registered toons.
+The user will then search for a toon by Character Name, Resonance, Health, Damage, Paragon Level, Class, or Clan Name.
+
+Next, when a user types the command $toon-stats, the bot will show a list of all registered toons.
+The user will then select a toon to show stats for.
+
+Next, when a user types the command $toon-raid, the bot will show a list of all registered toons.
+The user will then select a toon to show raid stats for.
+
+Next, when a user types the command $toon-pve, the bot will show a list of all registered toons.
+The user will then select a toon to show pve stats for.
+
+Next, when a user types the command $toon-pvp, the bot will show a list of all registered toons.
+The user will then select a toon to show pvp stats for.
+
+Next, when a user types the command $toon-damage, the bot will show a list of all registered toons.
+The user will then select a toon to show damage stats for.
+
+Next, when a user types the command $toon-paragon, the bot will show a list of all registered toons.
+The user will then select a toon to show paragon stats for.
+
+Next, when a user types the command $toon-clan, the bot will show a list of all registered toons.
+The user will then select a toon to show clan stats for.
+
+Next, when a user types the command $toon-class, the bot will show a list of all registered toons.
+The user will then select a toon to show class stats for.
+
+Next, when a user types the command $toon-resonance, the bot will show a list of all registered toons

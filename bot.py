@@ -6,6 +6,8 @@ from gtts import gTTS
 import responses
 import re, bot_data
 
+import cogs.add_toon as add_toon_cog
+
 const_TOKEN = 'MTA4MzE1MDA3MzYyMzQ3ODM2Mw.GkpFhP.g2RxsKPSFK2Zsx-iailEJfOMAhk_FH2Rz3z0Qo'
 const_lang = 'en'
 const_tld = 'us'
@@ -347,7 +349,8 @@ def run_discord_bot():
         except Exception as e:
             await ctx.send("SQL command failed... [error={str(e)}]")
 
-    
+    add_toon_cog.setup(bot)
+
     bot.run(const_TOKEN)
 
 
