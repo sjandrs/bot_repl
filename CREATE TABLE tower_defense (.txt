@@ -1,0 +1,13 @@
+DROP TABLE tower_defense;
+CREATE TABLE tower_defense (
+    id SERIAL PRIMARY KEY,
+    name TEXT,
+    resonance TEXT,
+    health TEXT,
+    damage TEXT,
+    paragon TEXT,
+    class TEXT,
+    discord_id TEXT,
+    discord_name TEXT, 
+    updated_on DATE
+);

@@ -1,0 +1,65 @@
+on_connect: This event is called when the bot has successfully connected to the Discord API.
+
+on_disconnect: This event is called when the bot has disconnected from the Discord API.
+
+on_ready: This event is called when the bot is fully initialized and ready to begin processing events.
+
+on_resumed: This event is called when the bot has reconnected after a disconnection.
+
+on_error: This event is called when an error occurs in the bot's code.
+
+on_warn: This event is called when a warning is issued in the bot's code.
+
+on_socket_raw_receive: This event is called whenever raw data is received from the Discord API over the WebSocket.
+
+on_socket_raw_send: This event is called whenever raw data is sent to the Discord API over the WebSocket.
+
+on_typing: This event is called when a user begins typing in a channel.
+
+on_message: This event is called whenever a message is sent in any channel the bot has access to.
+
+on_message_delete: This event is called whenever a message is deleted by its author or a moderator.
+
+on_message_edit: This event is called whenever a message is edited by its author or a moderator.
+
+on_bulk_message_delete: This event is called when multiple messages are deleted at once.
+
+on_reaction_add: This event is called when a reaction is added to a message.
+
+on_reaction_remove: This event is called when a reaction is removed from a message.
+
+on_reaction_clear: This event is called when all reactions are removed from a message.
+
+on_private_channel_delete: This event is called when a private (DM) channel is deleted.
+
+on_private_channel_create: This event is called when a private (DM) channel is created.
+
+on_private_channel_update: This event is called when a private (DM) channel is updated.
+
+on_member_join: This event is called when a new member joins the server.
+
+on_member_remove: This event is called when a member leaves or is removed from the server.
+
+on_member_update: This event is called whenever a member's server-related data changes, such as their nickname, roles, or permissions.
+
+on_user_update: This event is called whenever a user's account-related data changes, such as their username, avatar, or discriminator.
+
+on_guild_join: This event is called when the bot is added to a new server.
+
+on_guild_remove: This event is called when the bot is removed from a server.
+
+on_guild_update: This event is called when a server's data is updated.
+
+on_guild_role_create: This event is called when a role is created on a server.
+
+on_guild_role_delete: This event is called when a role is deleted on a server.
+
+on_guild_role_update: This event is called when a role's data is updated on a server.
+
+on_guild_emojis_update: This event is called when the list of emojis on a server is updated.
+
+on_voice_state_update: This event is called when a member's voice status changes, such as joining, leaving, or disconnecting from a voice channel.
+
+on_voice_server_update: This event is called when the voice server used by the bot is updated.
+
+on_webhooks_update: This event is called when a webhook used by the bot is updated.

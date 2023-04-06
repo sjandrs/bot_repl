@@ -349,6 +349,91 @@ def run_discord_bot():
         except Exception as e:
             await ctx.send("SQL command failed... [error={str(e)}]")
 
+    TOWER_DEFENSE_SIGNUP_SUCCESS_MESSAGE = "Your info has been saved to the roster signup! Thank you! You can update the information by simply reposting the updated information to #tower-defense."
+
+    @bot.event
+    async def on_message_edit(before, after):
+        if after.author.bot:
+            return # Return if the message is from a bot
+        if isinstance(after.channel, nextcord.DMChannel):
+            return # Return if the message is a DM
+
+        LISTENING_CHANNEL = "hobits-hackery"
+        DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+
+        # Check if the message is from a specific text channel
+        if after.channel.name == LISTENING_CHANNEL:
+            # Check if the message contains comma separated values
+            if ',' in after.content and after.content.count(',') >= 5:
+                # Split the message content into a list of values
+                values = after.content.split(',')
+                # Parse the desired values from the list
+                name = clean_text(values[0])
+                resonance = clean_text(values[1])
+                health = clean_text(values[2])
+                damage = clean_text(values[3])
+                paragon = clean_text(values[4])
+                class_ = clean_text(values[5])
+                discord_id = str(after.author.id)
+                discord_name = clean_text(after.author.display_name)
+                updated_on = datetime.datetime.now().strftime(DATE_FORMAT)
+                # Save the values to the SQLite database
+                table_name = "tower_defense"
+                columns = "name, resonance, health, damage, paragon, class, discord_id, discord_name, updated_on"
+                values = f"'{name}', '{resonance}', '{health}', '{damage}', '{paragon}', '{class_}', '{discord_id}', '{discord_name}', '{updated_on}'"
+                query = f"INSERT INTO {table_name} ({columns}) VALUES ({values})"
+                mydb = connect_DB()
+                mydb.execute(query)
+                disconnect_DB(mydb)
+
+                # Direct message the user who submitted the message
+                author = after.author
+                dm_message = TOWER_DEFENSE_SIGNUP_SUCCESS_MESSAGE
+                await author.send(dm_message)
+
+    @bot.event
+    async def on_message(message):
+        if message.author.bot:
+            return # Return if the message is from a bot
+        if isinstance(message.channel, nextcord.DMChannel):
+            return # Return if the message is a DM
+
+        LISTENING_CHANNEL = "hobits-hackery"
+        DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+
+        # Check if the message is from a specific text channel
+        if message.channel.name == LISTENING_CHANNEL:
+            # Check if the message contains comma separated values
+            if ',' in message.content and message.content.count(',') >= 5:
+                # Split the message content into a list of values
+                values = message.content.split(',')
+                # Parse the desired values from the list
+                name = clean_text(values[0])
+                resonance = clean_text(values[1])
+                health = clean_text(values[2])
+                damage = clean_text(values[3])
+                paragon = clean_text(values[4])
+                class_ = clean_text(values[5])
+                discord_id = str(message.author.id)
+                discord_name = clean_text(message.author.display_name)
+                updated_on = datetime.datetime.now().strftime(DATE_FORMAT)
+                # Save the values to the SQLite database
+                table_name = "tower_defense"
+                columns = "name, resonance, health, damage, paragon, class, discord_id, discord_name, updated_on"
+                values = f"'{name}', '{resonance}', '{health}', '{damage}', '{paragon}', '{class_}', '{discord_id}', '{discord_name}', '{updated_on}'"
+                query = f"INSERT INTO {table_name} ({columns}) VALUES ({values})"
+                mydb = connect_DB()
+                mydb.execute(query)
+                disconnect_DB(mydb)
+
+                # Direct message the user who submitted the message
+                author = message.author
+                
+                dm_message = TOWER_DEFENSE_SIGNUP_SUCCESS_MESSAGE
+                await author.send(dm_message)
+        await bot.process_commands(message)
+
+
     add_toon_cog.setup(bot)
 
     bot.run(const_TOKEN)
