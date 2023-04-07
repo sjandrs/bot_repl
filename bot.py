@@ -381,7 +381,7 @@ def run_discord_bot():
                 table_name = "tower_defense"
                 columns = "name, resonance, health, damage, paragon, class, discord_id, discord_name, updated_on"
                 values = f"'{name}', '{resonance}', '{health}', '{damage}', '{paragon}', '{class_}', '{discord_id}', '{discord_name}', '{updated_on}'"
-                query = f"INSERT INTO {table_name} ({columns}) VALUES ({values})"
+                query = f"INSERT INTO {table_name} ({columns}) VALUES ({values}) ON CONFLICT(discord_id) DO UPDATE SET resonance='{resonance}', health='{health}', damage='{damage}', paragon='{paragon}', class='{class_}', discord_id='{discord_id}', discord_name='{discord_name}', updated_on='{updated_on}'"
                 mydb = connect_DB()
                 mydb.execute(query)
                 disconnect_DB(mydb)
@@ -421,7 +421,7 @@ def run_discord_bot():
                 table_name = "tower_defense"
                 columns = "name, resonance, health, damage, paragon, class, discord_id, discord_name, updated_on"
                 values = f"'{name}', '{resonance}', '{health}', '{damage}', '{paragon}', '{class_}', '{discord_id}', '{discord_name}', '{updated_on}'"
-                query = f"INSERT INTO {table_name} ({columns}) VALUES ({values})"
+                query = f"INSERT INTO {table_name} ({columns}) VALUES ({values}) ON CONFLICT(discord_id) DO UPDATE SET resonance='{resonance}', health='{health}', damage='{damage}', paragon='{paragon}', class='{class_}', discord_id='{discord_id}', discord_name='{discord_name}', updated_on='{updated_on}'"
                 mydb = connect_DB()
                 mydb.execute(query)
                 disconnect_DB(mydb)
