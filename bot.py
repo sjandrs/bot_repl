@@ -8,7 +8,9 @@ import re, bot_data
 
 import cogs.add_toon as add_toon_cog
 
-const_TOKEN = 'MTA4MzE1MDA3MzYyMzQ3ODM2Mw.GkpFhP.g2RxsKPSFK2Zsx-iailEJfOMAhk_FH2Rz3z0Qo'
+import discord_token
+
+const_TOKEN = discord_token.token
 const_lang = 'en'
 const_tld = 'us'
 
