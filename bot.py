@@ -68,7 +68,7 @@ def create_speech_source(message, guild_id, lang, tld):
     filename = f"{guild_id}-tts-audio.mp3"
     myobj.save(filename)
     
-    source = nextcord.PCMVolumeTransformer(nextcord.FFmpegPCMAudio(filename, executable="C:/ffmpg/bin/ffmpeg.exe"))
+    source = nextcord.PCMVolumeTransformer(nextcord.FFmpegPCMAudio(filename, executable="ffmpeg.exe"))
     return source
 
 
